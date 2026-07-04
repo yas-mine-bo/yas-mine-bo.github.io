@@ -1,0 +1,1 @@
+# yas-mine-bo.github.io
