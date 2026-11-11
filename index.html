@@ -3,37 +3,623 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Yasmine Boudiaf, researcher, artist, and technologist working at the intersection of AI governance, cultural heritage, and decolonial practice. Based in London.">
+<meta name="keywords" content="Yasmine Boudiaf, AI ethics, cultural heritage, decolonial AI, intangible heritage, generative AI, participatory research, AI policy, racial justice, creative technologist, UAL, Creative Computing Institute, Algerian artist, AI governance, anti-colonial, indigenous data sovereignty, federated data commons">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yasmine-boudiaf.com/">
+<meta property="og:title" content="Yasmine Boudiaf">
+<meta property="og:description" content="Researcher, artist and technologist working across AI ethics, intangible cultural heritage and decolonial practice. Based in London.">
+<meta property="og:image" content="https://yasmine-boudiaf.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Yasmine Boudiaf, with eight portraits showing Algerian facial markings">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://yasmine-boudiaf.com/">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>Yasmine Boudiaf</title>
 <style>
-  body {
-    background: #F0EDE6;
-    font-family: 'Georgia', serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0;
-  }
-  .message {
-    text-align: center;
-    color: #1A1814;
-  }
-  h1 {
-    font-size: 1.4rem;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.75rem;
-  }
-  p {
-    font-size: 0.9rem;
-    color: #5A5550;
-  }
+@font-face {
+  font-family: 'Mono';
+  src: url('fonts/mono-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono';
+  src: url('fonts/mono-bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Mono';
+  src: url('fonts/mono-italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #fff; color: #000; font-size: 16px; }
+body {
+  font-family: 'Mono', 'Courier New', monospace;
+  font-weight: 400; line-height: 1.65;
+  max-width: 580px; margin: 0 auto;
+  padding: 2.5rem 1.5rem 8rem;
+}
+a { color: #000; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: #888; }
+a:hover { text-decoration-color: #000; }
+a:focus-visible { outline: 2px solid #000; outline-offset: 3px; text-decoration: none; }
+em { font-style: italic; }
+strong { font-weight: 700; }
+
+.site-header { display: grid; grid-template-columns: auto 1fr; gap: 2rem; margin-bottom: 5rem; }
+.site-name { font-size: 0.9rem; text-decoration: none; white-space: nowrap; }
+.site-name:hover { text-decoration: underline; }
+.nav-links { display: flex; flex-wrap: wrap; gap: 0 1.75rem; }
+.nav-links a { font-size: 0.9rem; }
+.nav-links a[aria-current="page"] { text-decoration-color: #000; text-decoration-thickness: 2px; }
+
+.back { display: inline-block; font-size: 0.82rem; color: #666; margin-bottom: 3.5rem; }
+.back:hover { color: #000; }
+
+.project-title { font-size: 1.55rem; font-weight: 400; line-height: 1.25; margin-bottom: 0.75rem; }
+.meta { font-size: 0.82rem; color: #666; margin-bottom: 2rem; }
+.project-title + .img-box, .project-title + p:not(.meta) { margin-top: 1.25rem; }
+
+p { font-size: 0.9rem; line-height: 1.75; margin-bottom: 1.25rem; }
+ol, ul { font-size: 0.9rem; line-height: 1.75; margin: 0 0 1.25rem 1.5rem; }
+
+.section-head { font-size: 0.9rem; font-weight: 700; margin: 3rem 0 1rem; }
+.sub-head { font-size: 1.1rem; font-weight: 400; margin: 4rem 0 1rem; }
+.sub-head:first-child, .view > .section-head:first-child { margin-top: 0; }
+.meta + .sub-head { margin-top: 1rem; }
+.sub-head + .img-box { margin-top: 0; }
+.section-head + p, .section-head + ol { margin-top: 0; }
+
+.img-box { width: 100%; background: #e8e8e8; display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden; margin-bottom: 0.5rem; }
+.img-box-main { aspect-ratio: 16/9; margin-bottom: 2.5rem; }
+.img-box-inline { aspect-ratio: 4/3; margin: 2.5rem 0; }
+.img-box-portrait { aspect-ratio: 4/5; max-width: 320px; margin-bottom: 3rem; }
+.img-box::before, .img-box::after { content: ''; position: absolute; background: #ccc; }
+.img-box::before { width: 100%; height: 1px; top: 50%; left: 0; }
+.img-box::after { width: 1px; height: 100%; left: 50%; top: 0; }
+.img-box-label { font-size: 0.7rem; color: #aaa; text-transform: uppercase; letter-spacing: 0.1em; position: relative; z-index: 1; }
+
+.inline-img { margin: 2.5rem 0; }
+.inline-img .img-box-inline { margin: 0 0 0.5rem; }
+.img-caption { font-size: 0.75rem; color: #666; line-height: 1.5; margin-bottom: 0; }
+.img-box-main:has(+ .img-caption) { margin-bottom: 0.5rem; }
+.img-box-main + .img-caption { margin-bottom: 2.5rem; }
+
+.project-links { display: flex; flex-direction: column; gap: 0.35rem; margin: 3rem 0 1.25rem; }
+.project-links a { font-size: 0.82rem; }
+
+/* landing */
+.carousel { position: relative; margin-bottom: 3rem; }
+.slide { display: none; text-decoration: none; }
+.slide.is-on { display: block; }
+.slide .img-box-main { margin-bottom: 0.5rem; }
+.slide-caption { font-size: 0.75rem; color: #666; }
+.slide:hover .slide-caption { color: #000; text-decoration: underline; text-underline-offset: 3px; }
+.contact { font-size: 0.82rem; color: #666; }
+
+/* projects index */
+.index { list-style: none; margin: 0; }
+.index li { margin-bottom: 4.5rem; }
+.index-link { display: block; text-decoration: none; }
+.index-title { display: block; font-size: 1.1rem; line-height: 1.35; margin-bottom: 1rem;
+  text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #888; }
+.index-link:hover .index-title { text-decoration-color: #000; }
+.index-link .img-box-main { margin-bottom: 1rem; }
+.index-desc { margin: 0; }
+
+/* research */
+.research-title { font-size: 1.1rem; line-height: 1.5; font-style: italic; margin-bottom: 2.5rem; }
+
+/* output and about lists */
+.out-group, .cv-group { margin-bottom: 1rem; }
+.out-title, .cv-role { font-size: 0.9rem; line-height: 1.5; }
+.out-meta, .cv-org-date { font-size: 0.75rem; color: #666; line-height: 1.5; }
+.out-meta a, .cv-org-date a { color: #666; }
+.affil-list { list-style: none; margin-left: 0; }
+.affil-list li { margin-bottom: 0.25rem; }
+.collab-list { list-style: none; margin-left: 0; }
+
+.view[hidden] { display: none; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (max-width: 480px) {
+  body { padding-top: 1.5rem; }
+  .site-header { grid-template-columns: 1fr; gap: 0.5rem; margin-bottom: 3.5rem; }
+  .nav-links { gap: 0 1.25rem; }
+  .project-title { font-size: 1.3rem; }
+}
+
+.fig { margin: 0 0 2.5rem; }
+.fig img, .fig video { display: block; max-width: 100%; height: auto; }
+.fig video { width: 100%; max-width: 450px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem; align-items: start; }
+.grid .fig, .grid .video { margin: 0; }
+.video { margin: 0 0 2.5rem; }
+.yt { position: relative; aspect-ratio: 16/9; background: #e8e8e8; }
+.yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video figcaption { font-size: 0.75rem; margin-top: 0.5rem; line-height: 1.5; }
+.video figcaption a { color: #666; }
+.tbc { font-size: 0.82rem; color: #999; }
+.plain-list { list-style: none; margin-left: 0; }
+.plain-list li { margin-bottom: 0.5rem; }
+.slide-frame { display: block; aspect-ratio: 16/9; overflow: hidden; background: #e8e8e8; margin-bottom: 0.5rem; }
+.slide-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.index-link .fig { margin-bottom: 1rem; }
+.portrait img { width: 320px; }
+.portrait { margin-bottom: 3rem; }
+.sub-head + .fig, .sub-head + .grid, .sub-head + .img-box { margin-top: 0; }
+.meta + .fig, .meta + .img-box { margin-top: 0.5rem; }
+@media (max-width: 480px) { .grid { gap: 0.6rem; } }
+
+
+.fig { text-align: center; }
+.fig img, .fig video { margin-left: auto; margin-right: auto; }
+.portrait img { width: 320px; }
+.grid { justify-items: center; }
+.img-box-portrait { margin-left: auto; margin-right: auto; }
+.video figcaption { text-align: center; }
+
+.fig img, .fig video { width: auto; max-height: 75vh; }
 </style>
 </head>
 <body>
-  <div class="message">
-    <h1>Yasmine Boudiaf</h1>
-    <p>Site under construction — coming soon.</p>
+
+<header class="site-header">
+  <a class="site-name" href="#landing">Yasmine Boudiaf</a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#projects">Projects</a>
+        <a href="#output">Public Work</a>
+    <a href="#bio">Bio</a>
+  </nav>
+</header>
+
+<main>
+<section id="v-landing" class="view">
+  <h1 class="visually-hidden">Yasmine Boudiaf</h1>
+  <div class="carousel">
+    <a class="slide is-on" href="#project-algerian-technoritual">
+      <span class="slide-frame"><img src="images/alg1.webp" alt="Eight portraits of Yasmine with facial markings gradually added" width="750" height="380"></span>
+      <span class="slide-caption">An Algerian Technoritual</span>
+    </a>
+    <a class="slide" href="#project-handgestures">
+      <span class="slide-frame"><img src="images/hand1.webp" alt="A hand making a ring gesture against black" width="720" height="405" loading="lazy"></span>
+      <span class="slide-caption">Mediterranean Hand Gestures</span>
+    </a>
+    <a class="slide" href="#project-woms">
+      <span class="slide-frame"><img src="images/woms2.webp" alt="Workshop participants at tables with laptops" width="1000" height="520" loading="lazy"></span>
+      <span class="slide-caption">Ways of Machine Seeing</span>
+    </a>
+    <a class="slide" href="#project-experimental">
+      <span class="slide-frame"><img src="images/amph1.webp" alt="Purple translucent sugar sculptures lit from inside on a white plinth" width="640" height="480" loading="lazy"></span>
+      <span class="slide-caption">Experimental Computation</span>
+    </a>
+    <a class="slide" href="#project-listening">
+      <span class="slide-frame"><img src="images/ls8.webp" alt="Workshop participants writing on a large Listening Structures sheet" width="500" height="375" loading="lazy"></span>
+      <span class="slide-caption">Listening Structures</span>
+    </a>
+    <a class="slide" href="#project-vr">
+      <span class="slide-frame"><img src="images/vr2.webp" alt="Virtual open-plan office scene with two men addressing the viewer" width="1000" height="484" loading="lazy"></span>
+      <span class="slide-caption">VR for Unconscious Bias</span>
+    </a>
   </div>
+  <p>Yasmine is a researcher and creative technologist based in London. She is a Research Fellow at UAL's Creative Computing Institute, a freelance consultant and a practice-based PhD candidate working at the intersection of generative AI ethics and policy, intangible cultural heritage, and decolonial and community-based practice.</p>
+  <p class="contact">yasmine-boudiaf [@] protonmail.com</p>
+</section>
+
+<section id="v-projects" class="view" data-title="Projects" hidden>
+  <h1 class="visually-hidden">Projects</h1>
+  <span class="visually-hidden" aria-hidden="true">AI ethics policy cultural heritage decolonial generative AI participatory research intangible heritage anti-colonial racial justice surveillance data rights creative computing art practice community networks federated data commons computer vision augmented reality</span>
+  <ul class="index">
+  <li>
+    <a class="index-link" href="#project-algerian-technoritual"><span class="index-title">An Algerian Technoritual</span><figure class="fig"><img src="images/alg1.webp" alt="Eight portraits of Yasmine with facial markings gradually added" width="750" height="380" loading="lazy"></figure></a>
+    <p class="index-desc">Yasmine uses AI to artistically respond to and connect with a disappearing practice from her own culture: the facial tattoos of Algerian women.</p>
+  </li>
+  <li>
+    <a class="index-link" href="#project-woms"><span class="index-title">Ways of Machine Seeing</span><figure class="fig"><img src="images/woms1.webp" alt="Man on a blue background inside a computer vision box labelled person" width="360" height="284" loading="lazy"></figure></a>
+    <p class="index-desc">How are we teaching machines to see?</p>
+  </li>
+  <li>
+    <a class="index-link" href="#project-federated"><span class="index-title">Federated Data Commons for Creative Communities</span><figure class="fig"><img src="images/cards.webp" alt="Workshop cards describing stakeholders, such as the community that contributed oral histories, each paired with a drawn symbol" width="1200" height="839" loading="lazy"></figure></a>
+    <p class="index-desc">A 15-month UK-US research project developing governance frameworks that enable creative communities to share and manage federated data commons for responsible machine learning applications.</p>
+  </li>
+  <li>
+    <a class="index-link" href="#project-aijustice"><span class="index-title">AI Justice Matrix</span><figure class="fig"><img src="images/ajm1.webp" alt="Network diagram of linked terms such as Colonial Extractivism, Surveillance and Epistemic Justice" width="760" height="760" loading="lazy"></figure></a>
+    <p class="index-desc">An online platform and collaborative authorship project that invites the perspectives of practitioners concerned with our relationship with technology.</p>
+  </li>
+  <li>
+    <a class="index-link" href="#project-aistreet"><span class="index-title">AI in the Street</span><figure class="fig"><img src="images/coventry.webp" alt="Participants cutting and collaging images onto a large street map at the Coventry observatory" width="900" height="1200" loading="lazy"></figure></a>
+    <p class="index-desc">A five-city participatory project examining how everyday publics encounter AI in city streets.</p>
+  </li>
+  <li>
+    <a class="index-link" href="#project-handgestures"><span class="index-title">Mediterranean Hand Gestures</span><figure class="fig"><img src="images/hand1.webp" alt="A hand making a ring gesture against black" width="720" height="405" loading="lazy"></figure></a>
+    <p class="index-desc">This interactive project uses a camera to detect hand gestures and a speaker to produce corresponding verbal sounds.</p>
+  </li>
+  <li>
+    <a class="index-link" href="#project-listening"><span class="index-title">Listening Structures</span><figure class="fig"><img src="images/ls1.webp" alt="Listening Structures sheet with four diagrams: Common-ing, Speculation Chamber, Epistemologies, Journey to Intervention" width="1000" height="905" loading="lazy"></figure></a>
+    <p class="index-desc">Listening Structures provide a 2-dimensional environment to capture and orient thoughts on a given technological conundrum.</p>
+  </li>
+  <li>
+    <a class="index-link" href="#project-everywhere"><span class="index-title">EveryWhere</span><figure class="fig"><img src="images/everywhere.webp" alt="EveryWhere wordmark above a row of emoji: globes, a web, the sun and a repeat symbol" width="1191" height="514" loading="lazy"></figure></a>
+    <p class="index-desc">EveryWhere is an open-source platform for enabling communities to build and own their own sustainable digital networks.</p>
+  </li>
+  <li>
+    <a class="index-link" href="#project-entanglements"><span class="index-title">Entanglements</span><figure class="fig"><img src="images/ent1.webp" alt="Hollerith punch card poster showing a large eye over a factory" width="250" height="348" loading="lazy"></figure></a>
+    <p class="index-desc">Entanglements interrogates the relationship between states and technology companies.</p>
+  </li>
+  <li>
+    <a class="index-link" href="#project-vr"><span class="index-title">VR for Unconscious Bias</span><figure class="fig"><img src="images/vr1.webp" alt="Virtual meeting room scene with four colleagues around a table" width="500" height="311" loading="lazy"></figure></a>
+    <p class="index-desc">Using virtual reality to identify and change misogynistic micro-aggressions in the workplace.</p>
+  </li>
+  <li>
+    <a class="index-link" href="#project-safetymeme"><span class="index-title">Safety Meme</span><figure class="fig"><img src="images/safe1.webp" alt="Baby doll with an extra eye in a striped top, on a pole against yellow" width="1000" height="1000" loading="lazy"></figure></a>
+    <p class="index-desc">A physical meme that acts as an informative object for humans of the future.</p>
+  </li>
+  <li>
+    <a class="index-link" href="#project-experimental"><span class="index-title">Experimental Computation</span><figure class="fig"><img src="images/amph1.webp" alt="Purple translucent sugar sculptures lit from inside on a white plinth" width="640" height="480" loading="lazy"></figure></a>
+    <p class="index-desc">Sugar sculptures, light sculptures and other experiments with electronics and code.</p>
+  </li>
+  </ul>
+</section>
+
+<article id="v-project-algerian-technoritual" class="view" data-title="An Algerian Technoritual" hidden>
+  <a class="back" href="#projects">← Projects</a>
+  <h1 class="project-title">An Algerian Technoritual</h1>
+  <p class="meta">Art practice</p>
+  <figure class="fig"><img src="images/alg1.webp" alt="Eight portraits of Yasmine with facial markings gradually added" width="750" height="380" loading="lazy"></figure>
+<p>An Algerian Techno-Ritual offers a methodology that uses machine learning (ML) as a tool to document cultural practices at risk of permanent erasure from our collective memory, and as a way for people to connect to their heritage.</p>
+<p>Yasmine uses AI to artistically respond to and connect with a disappearing practice from her own culture: the facial tattoos of Algerian women.</p>
+<p>She made a database of mock markings, generated an AI version of the markings, then used augmented reality (AR) to overlay it on her face.</p>
+<figure class="fig"><img src="images/alg2.webp" alt="Grid of AI-generated facial markings" width="687" height="376" loading="lazy"></figure>
+<figure class="fig"><img src="images/alg3.gif" alt="Animated magenta facial marking" width="180" height="280" loading="lazy"></figure>
+<p>Her intention is to expand this pilot to produce a database of facial markings of North African and Middle-Eastern women that does not contain biometric data, for cultural and artistic purposes. She would like to develop a way of using AI that is non-extractive and truly beneficial to society.</p>
+</article>
+<article id="v-project-woms" class="view" data-title="Ways of Machine Seeing" hidden>
+  <a class="back" href="#projects">← Projects</a>
+  <h1 class="project-title">Ways of Machine Seeing</h1>
+  <p class="meta">Research and public engagement</p>
+  <figure class="fig"><img src="images/woms1.webp" alt="Man on a blue background inside a computer vision box labelled person" width="360" height="284" loading="lazy"></figure>
+<p>The widespread adoption of computer vision affects the lives of its users at unprecedented levels. Its impact falls unevenly, and the populations already facing various forms of discrimination are the most vulnerable.</p>
+<p>The project addresses the question: how are we teaching machines to see?</p>
+<p>The project's point of departure is John Berger's 1972 BBC documentary series and book <em>Ways of Seeing</em>, which had an enormous impact on both popular and academic perspectives on visual culture. Central to the proposal is Berger's assertion that "the relation between what we see and what we know is never settled." The project asks in what ways computer vision further unsettles this relation. What does the increasingly general application of AI and machine vision algorithms in platforms and software imply for human ways of learning to see? What is the relationship between learning to see and training machines to see? The research proposes to investigate what new forms of computer visual literacy might be necessary when machines intervene in the interpretation, circulation and production of images. It brings together different approaches to visual and media literacy from art education, pedagogy and computer science.</p>
+<p>Through hands-on experimentation with dataset curation and machine training, the workshops give participants a concrete context for understanding the risks and benefits of AI and computer vision.</p>
+<figure class="fig"><img src="images/woms2.webp" alt="Workshop participants at tables with laptops" width="1000" height="520" loading="lazy"></figure>
+<p>The project's interest lies in how developments in computer vision have transformed visuality, and how particular elite forms of knowledge gain legitimacy in ways that support intersectional discrimination and exclusion. It aims to inform a public understanding of these processes, to expose the limited worldview of image datasets, and to include other voices in this discussion.</p>
+<p><a href="https://www.centreforthestudyof.net/machine-seeing/index.php/Main_Page" target="_blank" rel="noopener">Toolkit</a> in development.</p>
+<h2 class="section-head">Collaborators</h2>
+<p>Learning Experiments in Computer Vision and Visual Literacy is a public engagement project with funding from <a href="https://www.turing.ac.uk/learn-explore-and-participate/public-engagement-grant-award-2022" target="_blank" rel="noopener">The Alan Turing Institute</a>, and part of a research collaboration between the <a href="https://www.centreforthestudyof.net/" target="_blank" rel="noopener">Centre for the Study of the Networked Image</a> (CSNI) at London South Bank University, <a href="https://www.ucl.ac.uk/ioe/departments-and-centres/departments/culture-communication-and-media/art-design-and-museology" target="_blank" rel="noopener">UCL Institute of Education</a>, and <a href="https://thephotographersgallery.org.uk/" target="_blank" rel="noopener">The Photographers' Gallery</a>. With contributions from Geoff Cox (CSNI), Annie Davey (UCL IoE), Yasmine Boudiaf (Justice Matrix), Nicolas Malevé (Constant/Aarhus University), Janice McLaren (The Photographers' Gallery), Yugyoung Choi (UCL IoE), Hsin-Mei Lin (UCL IoE), Siddony Kalair (Roding Valley High School), Makaila McKenzie (Heartlands High School), James Stevenson, Andrew Dewdney (CSNI), Tim Fransen (CSNI) and Dean Kenning.</p>
+</article>
+<article id="v-project-federated" class="view" data-title="Federated Data Commons for Creative Communities" hidden>
+  <a class="back" href="#projects">← Projects</a>
+  <h1 class="project-title">Federated Data Commons for Creative Communities</h1>
+  <p class="meta">Research, 2025–2026</p>
+  <figure class="fig"><img src="images/cards.webp" alt="Workshop cards describing stakeholders, such as the community that contributed oral histories, each paired with a drawn symbol" width="1200" height="839"></figure>
+<p><strong>Funder:</strong> UKRI, <strong>Lead institution:</strong> University of the Arts London, <strong>Partner:</strong> New York University, <strong>Role:</strong> Project Co-Lead (UK)</p>
+<p>A 15-month UK-US research project developing governance frameworks that enable creative communities to share and manage federated data commons for responsible machine learning applications. A federated data commons is a distributed network of datasets governed by creators and stakeholders, allowing them to maintain local control while participating in a shared ecosystem with common standards.</p>
+<p>The project addresses a critical challenge: artists, musicians, and writers are at the forefront of AI adoption while facing significant economic risks from their work being used in training datasets without consent. The project develops two complementary frameworks: a Creator-Centric Federated Dataset Framework empowering artists to structure and share their creative datasets while maintaining control, and a Federated Data Commons Governance Framework establishing rules, permissions, and protocols for community-managed data commons.</p>
+<figure class="fig"><img src="images/fdcc.webp" alt="Participants standing around a table mapping a federated data commons with iridescent layers and handwritten notes" width="900" height="1200" loading="lazy"></figure>
+<p>Yasmine serves as Project Co-Lead (UK), specialising in public engagement methodologies and AI ethics implementation. Her role spans participatory co-design workshops (WP2.1) and the documentation of case studies and implementation examples (WP4.1). The project is led by <a href="https://phoenixperry.com/" target="_blank" rel="noopener">Phoenix Perry</a> (UAL) and also involves Rebecca Fiebrink, Nick Bryan-Kinns, Elizabeth Wilson (all UAL), and <a href="https://tegabrain.com/" target="_blank" rel="noopener">Tega Brain</a> and Luke DuBois (NYU). Partners include <a href="https://foundation.mozilla.org/" target="_blank" rel="noopener">Mozilla Foundation</a>, <a href="https://creativecommons.org/" target="_blank" rel="noopener">Creative Commons</a>, <a href="https://sfpc.study/" target="_blank" rel="noopener">Society for Poetic Computation</a>, and <a href="https://www.ableton.com/" target="_blank" rel="noopener">Ableton</a>.</p>
+</article>
+<article id="v-project-aijustice" class="view" data-title="AI Justice Matrix" hidden>
+  <a class="back" href="#projects">← Projects</a>
+  <h1 class="project-title">AI Justice Matrix</h1>
+  <p class="meta">Research, 2021–2022</p>
+  <figure class="fig"><img src="images/ajm1.webp" alt="Network diagram of linked terms such as Colonial Extractivism, Surveillance and Epistemic Justice" width="760" height="760" loading="lazy"></figure>
+<p>The <a href="https://aijusticematrix.com/" target="_blank" rel="noopener">AI Justice Matrix</a> is an online platform and collaborative authorship project that invites the perspectives of practitioners concerned with our relationship with technology. Yasmine developed it as part of her <a href="https://www.adalovelaceinstitute.org/just-ai/" target="_blank" rel="noopener">JUST AI</a> fellowship at the <a href="https://www.adalovelaceinstitute.org/" target="_blank" rel="noopener">Ada Lovelace Institute</a>, with funding from the <a href="https://www.ukri.org/councils/ahrc/" target="_blank" rel="noopener">Arts and Humanities Research Council</a>.</p>
+<p>Fundamentally, this project refutes the notion that effective policy making, as it relates to AI ethics, is at all possible. It is a critique of Euro-centric knowledge processes and the way they manifest as curated information flows passing through sanctioned knowledge keepers. It treats all sources and expressions of knowledge as valid. It offers issues to consider when contemplating AI practice without necessarily offering an answer.</p>
+<figure class="fig"><img src="images/ajm2.webp" alt="Two AI Justice Matrix pop-up entries: Ethics, and Older White Feminism" width="957" height="412" loading="lazy"></figure>
+<p>She presented the project at <a href="https://202122.transmediale.de/projects/aarhus-university-london-south-bank-university" target="_blank" rel="noopener">Transmediale 2021/22</a> and <a href="https://www.cpdpconferences.org/" target="_blank" rel="noopener">CPDP 2022</a>. A publication is in development.</p>
+</article>
+<article id="v-project-aistreet" class="view" data-title="AI in the Street" hidden>
+  <a class="back" href="#projects">← Projects</a>
+  <h1 class="project-title">AI in the Street</h1>
+  <p class="meta">Research, 2023–2026</p>
+  <figure class="fig"><img src="images/coventry.webp" alt="Participants cutting and collaging images onto a large street map at the Coventry observatory" width="900" height="1200"></figure>
+<p><strong>Funder:</strong> AHRC BRAID Programme, <strong>Role:</strong> Researcher and Creative Technologist, <strong>Partners:</strong> University of Warwick, UAL, Nokia Bell Labs, NESTA, LOTI, Transport for West Midlands</p>
+<p>A five-city participatory project examining how everyday publics encounter AI in city streets. Yasmine led the London Observatory across three sites, Science Gallery (London Bridge), Martello Street Studios (London Fields), and Hermitage Community Moorings (Wapping), with 18 participants across sessions of up to three hours each.</p>
+<p>The methodology centred on collaborative diagramming and sensing walks using A4 OHP transparency sheets layered over A0 street maps, working across four domains: Vehicles and Physical Infrastructure, Platforms and Data Flows, Labour and Operations, Users and Non-Users. Observatories also ran in Coventry, Edinburgh, Cambridge, and Logan (Australia). Findings launched at Newspeak House, London, January 2026.</p>
+<div class="project-links">
+<a href="https://arxiv.org/abs/2510.23342" target="_blank" rel="noopener">Reciprocity Deficits (arXiv)</a>
+<a href="https://static1.squarespace.com/static/5dc968e72502ee46b88c1a4a/t/691c5b9a370efc54cf6b59b8/1763466138654/AI_IN_THE_STREET_2025.pdf" target="_blank" rel="noopener">Policy report PDF</a>
+</div>
+</article>
+<article id="v-project-handgestures" class="view" data-title="Mediterranean Hand Gestures" hidden>
+  <a class="back" href="#projects">← Projects</a>
+  <h1 class="project-title">Mediterranean Hand Gestures</h1>
+  <p class="meta">Art practice, 2020</p>
+  <figure class="fig"><img src="images/hand1.webp" alt="A hand making a ring gesture against black" width="720" height="405" loading="lazy"></figure>
+<p>This interactive project uses a camera to detect hand gestures and a speaker to produce corresponding verbal sounds.</p>
+<p>Common Algerian and Mediterranean hand gestures are a big part of Yasmine's culture, and she wanted to produce a system that preserves and demonstrates them. She remembers, as a child, watching her relatives having entire conversations with neighbours in other buildings using hand gestures alone. They would catch up on local news, gossip and share jokes.</p>
+<figure class="fig"><video src="video/hand2.mp4" autoplay muted loop playsinline aria-label="Yasmine making a series of Algerian hand gestures"></video></figure>
+<p>Over time, this gestural language has faded. The main reason is that it seems no longer necessary, since most people have a mobile phone they use to send messages and emojis. Another factor is generational. Many in her generation have grown up under the influence of Western Europe and the US, or emigrated there, where hand gestures and expressive communication are less common. Although not a traditionalist, she has come to realise that the English language and mannerisms lack the range and richness in emotional expression that Mediterranean cultures have.</p>
+<p>She wanted to develop a way of capturing the emotional vocabulary of these gestures before they disappear completely, and to make the case for the non-verbal expressions of emotion that words fail to articulate. Ideally this would be an interactive installation where audience members try out different hand gestures and learn what their meanings represent. Even without understanding the language they hear, they would sense the emotion in the tone and still enjoy the experience.</p>
+<p>She wrote the piece in C++ and used a PlayStation Eye camera. She provided the audio recordings of her voice and her hand for the gestures. She first produced a data file with the three gestures separately, then imported that into the final program, which recognised the visual input and matched it to the audio files.</p>
+<p>A Kinect camera or a Leap Motion sensor, both of which detect depth, would read hand movement more accurately, as would sensors that detect muscle movement. However, the wider purpose of this project is for audiences to interact with it outside of an installation, on personal devices with 2D cameras only. Therefore, to be as accessible as possible, she would put her effort into making movement detection more efficient, perhaps through more sophisticated machine learning algorithms.</p>
+<p>She would like to develop an open-source, de-centralised gestural library that anyone is free to contribute to and curate. Machine learning algorithms could match and categorise gestures from different cultures. This library would act as a way to preserve gestural languages at risk of extinction and to trace how they have evolved over time and across geographies.</p>
+</article>
+<article id="v-project-listening" class="view" data-title="Listening Structures" hidden>
+  <a class="back" href="#projects">← Projects</a>
+  <h1 class="project-title">Listening Structures</h1>
+  <p class="meta">Research and practice</p>
+  <figure class="fig"><img src="images/ls1.webp" alt="Listening Structures sheet with four diagrams: Common-ing, Speculation Chamber, Epistemologies, Journey to Intervention" width="1000" height="905" loading="lazy"></figure>
+<p>Challenging, undermining and distributing power is hard. Participation in discourse, let alone influencing systemic change, requires resources. Some are material and some more symbolic, signalling to all the undeniable legitimacy of the agent.</p>
+<p>In undermining this process (a process that has become democracy in practice), new constellations of participation and outcomes are necessary. Listening Structures provide a 2-dimensional environment to capture and orient thoughts on a given technological conundrum. A series of geometric shapes that gradually fill with words, the process asks: what would listening look like if assigned roles were no longer visible, and conventional conversational dynamics (such as waiting for your turn to speak) no longer confined participants?</p>
+<div class="grid"><figure class="fig"><img src="images/ls2.gif" alt="Common-ing diagram, animated" width="500" height="500" loading="lazy"></figure><figure class="fig"><img src="images/ls3.gif" alt="Deep Fissures diagram, animated" width="500" height="500" loading="lazy"></figure><figure class="fig"><img src="images/ls4.gif" alt="Epistemologies diagram, animated" width="500" height="500" loading="lazy"></figure><figure class="fig"><img src="images/ls5.gif" alt="Floating Thoughts diagram, animated" width="500" height="500" loading="lazy"></figure><figure class="fig"><img src="images/ls6.gif" alt="Journey to Intervention diagram, animated" width="500" height="500" loading="lazy"></figure><figure class="fig"><img src="images/ls7.gif" alt="Speculation Chamber diagram, animated" width="500" height="500" loading="lazy"></figure></div>
+<p>The listening detaches from any person, yet everyone becomes the listener, as each participant sees the output at the same time. This distributed listening becomes active distributed listening when participants have access to the platform that collects contributions and are able to manipulate them. These contributions, or thoughts, take on a life of their own. Anyone picks them up, moves them around, builds on them, manipulates and challenges them. Half-formed ideas manifest, and someone else makes them whole. As ideas travel through these structures during this in-person interactive workshop, the nature of these ideas changes, and the commons determines the output.</p>
+<p>In the workshops, participants collectively interrogate case studies where big tech and the public sector become entangled, assessing their impact on public life and minoritised communities. They pick up and run with each other's ideas to collectively speculate on alternative figurations for what such relationships could be, if communities distributed power and made decisions in the commons.</p>
+<figure class="fig"><img src="images/ls8.webp" alt="Workshop participants writing on a large Listening Structures sheet" width="500" height="375" loading="lazy"></figure>
+<figure class="fig"><img src="images/ls9.webp" alt="A finished Listening Structures sheet covered in handwritten contributions" width="500" height="375" loading="lazy"></figure>
+<p><a href="https://titipi.org/wiki/index.php/Listening_Structures" target="_blank" rel="noopener">TiTiPi's Infrastructural Interactions</a> features Listening Structures, and Yasmine has run workshops at <a href="https://www.cpdpconferences.org/" target="_blank" rel="noopener">CPDP</a> and <a href="https://www.disruptionlab.org/" target="_blank" rel="noopener">Disruption Network Lab</a>.</p>
+</article>
+<article id="v-project-everywhere" class="view" data-title="EveryWhere" hidden>
+  <a class="back" href="#projects">← Projects</a>
+  <h1 class="project-title">EveryWhere</h1>
+  <p class="meta">Community networks, 2022</p>
+  <figure class="fig"><img src="images/everywhere.webp" alt="EveryWhere wordmark above a row of emoji: globes, a web, the sun and a repeat symbol" width="1191" height="514"></figure>
+<p>EveryWhere is an open-source platform for enabling communities to build and own their own sustainable digital networks. The project comprises a long-term method for enabling local communities to manage their own instance, a hardware platform for building secure, sustainable community-spanning wi-fi mesh networks, and a software platform for writing, reading, and interacting with community content.</p>
+<p>Yasmine participated in the founding EveryWhere Conference at UAL's Creative Computing Institute in July 2022, contributing across five thematic working sessions: community, hardware, sustainability, software, and creative. Her work on community-centred technology and anti-colonial approaches to digital infrastructure directly shaped the project's ethical framing. The conference brought together practitioners including Sarah Grant, Tega Brain, and Matteo Loglio to develop the project's research questions and methodology. Yasmine's contribution is credited throughout the conference documentation as foundational to the community and creative strands.</p>
+<p>The project's three research goals, enacting best practices for local community-owned networks; proving best practices in sustainable computing spanning local hardware, renewable power, and software; and proving best practices in the creation of artistic and functional augmented reality content for and by communities, align directly with Yasmine's broader research concerns around community data sovereignty and decolonial infrastructure.</p>
+<div class="project-links">
+<a href="https://joelgethinlewis.com/presentations/EveryWhere/" target="_blank" rel="noopener">EveryWhere presentation</a>
+</div>
+</article>
+<article id="v-project-entanglements" class="view" data-title="Entanglements" hidden>
+  <a class="back" href="#projects">← Projects</a>
+  <h1 class="project-title">Entanglements</h1>
+  <p class="meta">Project, 2021–2022</p>
+  <figure class="fig"><img src="images/ent1.webp" alt="Hollerith punch card poster showing a large eye over a factory" width="250" height="348" loading="lazy"></figure>
+<p>Entanglements interrogates the relationship between states and technology companies. These relationships are lawful, yet at times perpetuate violence towards minoritised groups. It is therefore important when describing these relationships and their effects on people to move away from the potentially sanitising framing of legality vs illegality, and to situate this as part of a wider pattern of behaviour that keeps replaying across history and geographies in different forms, as part of a continuum of the subjugation of people away from power by entities of power.</p>
+<figure class="fig"><img src="images/ent2.webp" alt="Pages from Vaught&#x27;s Practical Character Reader labelling facial features as deceitful or honest" width="640" height="505" loading="lazy"></figure>
+<p>The systematic, often unnoticed and seemingly harmless harvesting of individuals' data becomes a weapon against minoritised groups. In partnerships between government bodies and private technology companies, the project identifies tech solutionism, normalising language, lack of consent and obfuscation as neo-colonial behaviours of these entities of power, serving to maintain and extend that power.</p>
+<figure class="fig"><img src="images/ent3.webp" alt="BEIS privacy notice listing third parties that receive personal data, annotated in red" width="801" height="435" loading="lazy"></figure>
+<p>This project seeks to demystify technological concepts and develop a conceptual understanding in people. Collectively, participants interrogate, detangle and then reimagine public-private contracts.</p>
+<figure class="fig"><img src="images/ent4.webp" alt="Government contract text with colour highlights and annotations" width="368" height="165" loading="lazy"></figure>
+<p><a href="https://www.artscouncil.org.uk/" target="_blank" rel="noopener">Arts Council England</a> supported the project, and Yasmine presented it at the <a href="https://www.arts.ac.uk/creative-computing-institute" target="_blank" rel="noopener">Creative Computing Institute</a>, <a href="https://www.disruptionlab.org/" target="_blank" rel="noopener">Disruption Network Lab</a> and <a href="https://lnu.se/en/" target="_blank" rel="noopener">Linnaeus University</a>.</p>
+</article>
+<article id="v-project-vr" class="view" data-title="VR for Unconscious Bias" hidden>
+  <a class="back" href="#projects">← Projects</a>
+  <h1 class="project-title">VR for Unconscious Bias</h1>
+  <p class="meta">Project</p>
+  <figure class="fig"><img src="images/vr1.webp" alt="Virtual meeting room scene with four colleagues around a table" width="500" height="311" loading="lazy"></figure>
+<h2 class="section-head">Aim</h2>
+<p>To identify misogynistic micro-aggressive behaviour arising from implicit bias in the workplace, and use virtual reality as a tool to change that behaviour.</p>
+<h2 class="section-head">The training</h2>
+<p>Many professional women encounter a type of misogyny at work too subtle to make an official complaint about. These are microaggressions: subtle physical or verbal behaviour based on bias and stereotypes.</p>
+<p>Colleagues participate by experiencing virtual scenarios that show such behaviour. A guided conversation follows, discussing themes in the experiences. The training asks nothing more of participants, and trust individuals to make personal changes as they deem appropriate.</p>
+<figure class="fig"><img src="images/vr2.webp" alt="Virtual open-plan office scene with two men addressing the viewer" width="1000" height="484" loading="lazy"></figure>
+<h2 class="section-head">Research</h2>
+<p>Yasmine collected hundreds of personal accounts of misogynistic micro-aggressions from hundreds of women. There were 3 criteria:</p>
+<ol>
+<li>Accounts came from professional women currently working in corporate and tech organisations.</li>
+<li>Recent experiences.</li>
+<li>Behaviour too subtle for common HR standards to treat as blatant misogyny.</li>
+</ol>
+<p>4 common themes emerged, which form the basis for the scenarios:</p>
+<ol>
+<li>Personal comments</li>
+<li>Being ignored</li>
+<li>Assumed to be junior</li>
+<li>Combative or undermining attitude</li>
+</ol>
+<p>The <a href="https://www.standard.co.uk/tech/vr-simulation-gives-men-a-taste-of-what-it-s-like-for-women-who-are-mansplained-at-in-the-office-a3704956.html" target="_blank" rel="noopener">Evening Standard</a> featured the project.</p>
+</article>
+<article id="v-project-safetymeme" class="view" data-title="Safety Meme" hidden>
+  <a class="back" href="#projects">← Projects</a>
+  <h1 class="project-title">Safety Meme</h1>
+  <p class="meta">Art practice, 2021</p>
+  <figure class="fig"><img src="images/safe1.webp" alt="Baby doll with an extra eye in a striped top, on a pole against yellow" width="1000" height="1000" loading="lazy"></figure>
+<p>A physical meme that acts as an informative object for humans of the future: a human interacts with a mechanical object, and the object reacts and communicates valuable information to the human.</p>
+<p>Yasmine's intention is that in a speculative future, a person familiar with the Physical Meme, upon discovering a piece of information that needs communicating, will build a version of this object, as an act of altruism, to share that information with others.</p>
+<p>Her monster baby warns humans of the future of nuclear waste nearby. A pressure sensor activates movement and sound that warns you to stay away.</p>
+<figure class="fig"><img src="images/safe2.webp" alt="The doll on a pole among leaves, beside a radiation warning sign" width="558" height="558" loading="lazy"></figure>
+<p>She proposes a new use for memes: to inform. Memes don't have to exist only for humour, or derision, or capitalist endeavours. They have the potential to inform, and to serve altruism. They evolve, and spill over from the web to the real world. The project invites people to imagine new possibilities together.</p>
+<p>She has made an example of a Physical Meme, a "Safety Meme", as a pilot project communicating the dangers of nuclear waste.</p>
+<p>Nuclear waste will remain radioactive for thousands of years. Humans in the future will need warnings about the danger of the nuclear waste we produce now. Semantics and symbols we use now will not carry the same meaning in the future, so the project proposes a warning symbol (a mutated baby) that stays relevant in years to come, and a vehicle that lets people reproduce the symbol (the virality of memes).</p>
+<figure class="fig"><img src="images/safe4.gif" alt="Animated biohazard warning sign" width="80" height="66" loading="lazy"></figure>
+<p>Nuclear semiotics is a fascinating practice that attempts to imagine which interventions we produce in the present would help warn people in the distant future of the dangers of nuclear waste. Attempts at this include an atomic priesthood, breeding cats that change colour near radiation, and the notion that "this place is not a place of honour".</p>
+<p>It's unlikely that any warning system that appeals to a person's sense of reason will work. People routinely trespass and excavate where they know they shouldn't. Tomb raiders ignore curses, and there's a campaign trying to convince young people that live train lines are actually dangerous.</p>
+<p>This pilot project proposed that evoking discomfort and disgust would work better, as these emotions are universal, and not attached to a specific culture or a particular language system.</p>
+<p>She wanted to appeal to people's sense of the absurd, as something unusual is more viable as a meme, and more likely to live on in people's imaginations, free of any tether to cultural context or a point in time. The aesthetic of Tim Hunkin's "Novelty Automation" machines elegantly demonstrates that machines function and convey meaning without mechanical complexity. She wanted to retain an element of humour, to be disarming and engaging without asking much intellectual labour of an audience.</p>
+<figure class="fig"><img src="images/safe3.webp" alt="The doll taken apart, wired to an Arduino and servos" width="500" height="375" loading="lazy"></figure>
+<p>She assembled a mechanical sculpture that anyone is able to re-assemble, without knowledge of electronics, using easily available, scavenged materials at little or no cost. She wanted to offer the idea that participating in a practical sense in technological practice is for everyone.</p>
+<h2 class="section-head">Working philosophy</h2>
+<p>A list of proposed rules and principles to guide the development of the project:</p>
+<ul class="plain-list">
+<li>The object should have an innately familiar form.</li>
+<li>The object's form should alter when activated in order to communicate a piece of information.</li>
+<li>The piece of information should be relevant to humans in their situation and point in time.</li>
+<li>The viral nature of memes could transmit different types of information.</li>
+<li>People currently fall short of using memes to their full potential.</li>
+<li>Memes are able to exist offline, as physical objects.</li>
+<li>A meme in the present has the potential to live on online indefinitely.</li>
+<li>An online meme could manifest as an offline, physical object.</li>
+<li>Where possible, use easily available, low cost, second-hand objects and components.</li>
+<li>Where possible, use scavenged materials that will keep their integrity for hundreds or thousands of years.</li>
+</ul>
+<p>She exhibited this project at <a href="https://www.cpdpconferences.org/" target="_blank" rel="noopener">CPDP 2021</a>.</p>
+</article>
+<article id="v-project-experimental" class="view" data-title="Experimental Computation" hidden>
+  <a class="back" href="#projects">← Projects</a>
+  <h1 class="project-title">Experimental Computation</h1>
+  <p class="meta">Art practice</p>
+  <h3 class="sub-head">Amphibian Populations of London</h3>
+<figure class="fig"><img src="images/amph1.webp" alt="Purple translucent sugar sculptures lit from inside on a white plinth" width="640" height="480" loading="lazy"></figure>
+<p>Amphibian Populations of London is a computational art piece made of three hand-sized sculptures. Yasmine made the sculptures from sugar and coated them in resin. They emit light pulses corresponding to populations of amphibians recorded at different sites across London. The form, colour and pulse patterns of the sculptures represent the relative health of these populations.</p>
+<figure class="fig"><img src="images/amph2.webp" alt="Close-up of two purple sugar sculptures" width="640" height="480" loading="lazy"></figure>
+<p>Does data have the capacity to represent living things? And if so, what traits does a non-biological object require to convey this sense of life?</p>
+
+<h3 class="sub-head">Sentient Blobs</h3>
+<figure class="fig"><img src="images/blob1.webp" alt="Coloured light sculptures glowing in a tree at night" width="480" height="640" loading="lazy"></figure>
+<p>Interactive light sculptures with motion detectors, LED lights and a programmed ESP32 chip give ambient "womp" pulsating light when someone nears.</p>
+<p>Small ones as indoor decoration, massive ones at outdoor experiences.</p>
+<p>Yasmine exhibited them at <a href="https://secretgardenparty.com/" target="_blank" rel="noopener">Secret Garden Party</a> 2022.</p>
+
+<h3 class="sub-head">Ethnic Representation Index</h3>
+<div class="img-box img-box-main"><span class="img-box-label">Image</span></div>
+<p><strong>Publisher:</strong> UAL, <strong>Co-authors:</strong> Prof. David Mba, Chris Lloyd-Bardsley, <strong>Editions:</strong> 2022, 2023, 2024</p>
+<p>Annual data analysis and appraisal of ethnic disparities and anti-racism initiatives across universities in England. UAL's head of research selected Yasmine to co-author the Index, and she managed the research process from design through to publication and dissemination. Times Higher Education featured the Index.</p>
+
+<h3 class="sub-head">HR Manager</h3>
+<figure class="fig"><img src="images/hr1.webp" alt="Virtual office room from the HR Manager game" width="300" height="153" loading="lazy"></figure>
+<p class="tbc">Text to come</p>
+
+<h3 class="sub-head">Preppy</h3>
+<div class="grid"><figure class="fig"><img src="images/prep1.webp" alt="Preppy app menu screen" width="204" height="318" loading="lazy"></figure><figure class="fig"><img src="images/prep2.webp" alt="Preppy challenge screen asking whether she seems happy, reflective or upset" width="202" height="312" loading="lazy"></figure></div>
+<p class="tbc">Text to come</p>
+
+<h3 class="sub-head">Untitled</h3>
+<figure class="fig"><img src="images/misc1.webp" alt="A hand holding a circuit board beside a box labelled Dirty Prolog Box" width="300" height="170" loading="lazy"></figure>
+<figure class="fig"><img src="images/misc2.gif" alt="Animated grey cat" width="207" height="170" loading="lazy"></figure>
+
+<h3 class="sub-head">Average Face, Average Views</h3>
+<div class="img-box img-box-main"><span class="img-box-label">Image</span></div>
+<p class="tbc">Text to come</p>
+
+<h3 class="sub-head">Interactive Wallpaper</h3>
+<div class="img-box img-box-main"><span class="img-box-label">Image</span></div>
+<p class="tbc">Text to come</p>
+
+<h3 class="sub-head">Stop-Motion Animation</h3>
+<div class="img-box img-box-main"><span class="img-box-label">Image</span></div>
+<p class="tbc">Text to come</p>
+
+</article>
+
+<section id="v-output" class="view" data-title="Public Work" hidden>
+<h2 class="section-head">Recognition</h2>
+<div class="out-group"><div class="out-title"><a href="https://womeninaiethics.org/the-list/of-2022/" target="_blank" rel="noopener">100 Brilliant Women in AI Ethics</a></div><div class="out-meta">Women in AI Ethics, 2022</div></div>
+<div class="out-group"><div class="out-title"><a href="https://www.adalovelaceinstitute.org/person/yasmine-boudiaf/" target="_blank" rel="noopener">Ada Lovelace Institute, JUST AI Fellowship</a></div><div class="out-meta">AHRC-funded visiting fellowship, 2020–2023</div></div>
+<div class="out-group"><div class="out-title">Arts Council England Grant</div><div class="out-meta">Entanglements lecture series, 2021</div></div>
+
+<h2 class="section-head">Writing</h2>
+<div class="out-group"><div class="out-title"><a href="https://arxiv.org/abs/2510.23342" target="_blank" rel="noopener">Reciprocity Deficits: Observing AI in the Street with Everyday Publics</a></div><div class="out-meta">arXiv preprint, 2025. With Alex S. Taylor, Noortje Marres, Mercedes Bunz, Thao Phan, Maya Indira Ganesh, Dominique Barron, Rachel Coldicutt, Iain Emsley, Beatrice Gobbo, Louise Hickman, Manu Luksch, Bettina Nissen, Mukul Patel, Luis Soares</div></div>
+<div class="out-group"><div class="out-title"><a href="https://www.arts.ac.uk/about-ual/ethnic-representation-index" target="_blank" rel="noopener">Ethnic Representation Index</a></div><div class="out-meta">UAL, 2022, 2023, 2024. Co-author with Prof. David Mba and Chris Lloyd-Bardsley. Covered by Times Higher Education</div></div>
+<div class="out-group"><div class="out-title"><a href="https://titipi.org/wiki/index.php/Listening_Structures" target="_blank" rel="noopener">Listening Structures</a></div><div class="out-meta">In Infrastructural Interactions: Survival, Resistance and Radical Care, ed. Pritchard and Snelting. TiTiPi, Brussels. ISBN: 9789464513202, 2022</div></div>
+<div class="out-group"><div class="out-title"><a href="https://www.cpdpconferences.org/events/ai-justice-matrix-the-futility-of-policy-craft" target="_blank" rel="noopener">AI Justice Matrix: The Futility of Policy Craft</a></div><div class="out-meta">Transmediale 2022, CPDP 2022, CSNI, Aarhus, 2022</div></div>
+<div class="out-group"><div class="out-title"><a href="https://static1.squarespace.com/static/5dc968e72502ee46b88c1a4a/t/691c5b9a370efc54cf6b59b8/1763466138654/AI_IN_THE_STREET_2025.pdf" target="_blank" rel="noopener">Lessons from Everyday Encounters with AI Innovation</a></div><div class="out-meta">AI in the Street policy report, 2025</div></div>
+<div class="out-group"><div class="out-title"><a href="https://notechfortyrants.org/2022/11/07/new-report-surveillance-tech-perpetuates-police-abuse-of-power/" target="_blank" rel="noopener">Surveillance Tech Perpetuates Police Abuse of Power</a></div><div class="out-meta">No Tech For Tyrants, co-author, 2022</div></div>
+<div class="out-group"><div class="out-title">AI and Inequalities</div><div class="out-meta">Regional Academy on the United Nations, UN, OSCE, 2022</div></div>
+
+<h2 class="section-head">Workshops</h2>
+<div class="out-group"><div class="out-title">Participatory AI: Drawing a Collective Dataset</div><div class="out-meta">SUSAI Futures, Bath Spa University, 2025</div></div>
+<div class="out-group"><div class="out-title">AI in the Street: Creative Diagramming Workshop</div><div class="out-meta">Newspeak House, London. With Mukul Patel, January 2026</div></div>
+<div class="out-group"><div class="out-title">AI in the Street: Reclaiming the Smart Street</div><div class="out-meta">Science Gallery London. With Manu Luksch and Mukul Patel, 2024</div></div>
+<div class="out-group"><div class="out-title">AI in the Street: Coventry Community Observatory</div><div class="out-meta">Coventry. Sensing walks and screenprinting, with Kate Rossin, 2024</div></div>
+<div class="out-group"><div class="out-title">Federated Data Commons: Participatory Co-Design Workshops</div><div class="out-meta">UK and US, UKRI Federated Data Commons project, UAL, 2025–2026</div></div>
+<div class="out-group"><div class="out-title"><a href="https://varia.zone/en/colonial-infrastructures-23.html" target="_blank" rel="noopener">Listening Structures: Colonial Infrastructures Worksession</a></div><div class="out-meta">Varia collective, Rotterdam, 2023</div></div>
+<div class="out-group"><div class="out-title">Listening Structures: A Collective Process for Big Tech's Interrogation</div><div class="out-meta">Artivism conference, Re-Imagine Europe, 2022</div></div>
+<div class="out-group"><div class="out-title">EveryWhere Conference: Community, Hardware, Sustainability, Software and Creative sessions</div><div class="out-meta">UAL Creative Computing Institute, London, July 2022</div></div>
+<div class="out-group"><div class="out-title">Learning Experiments in Computer Vision and Literacy</div><div class="out-meta">The Alan Turing Institute, 2022</div></div>
+<div class="out-group"><div class="out-title">Shaping AI: AI Controversies Expert Workshop</div><div class="out-meta">European Open Research Area, 2022</div></div>
+<div class="out-group"><div class="out-title">Digital Rights For All</div><div class="out-meta">Digital Freedom Fund, workshop series on community advocacy tools for strategic litigation, 2022</div></div>
+
+<h2 class="section-head">Speaking</h2>
+<div class="out-group"><div class="out-title"><a href="https://www.radicalmatter.art/events/2024-symposium" target="_blank" rel="noopener">radical matter Symposium: An Algerian Technoritual</a></div><div class="out-meta">Impulse lecture, University of Applied Arts Vienna, RCA, 2024</div></div>
+<div class="out-group"><div class="out-title"><a href="https://berggruen.org/news/many-worlds-of-ai" target="_blank" rel="noopener">Many Worlds of AI: Cultural Memory: Artistic Experiments in AI</a></div><div class="out-meta">Cambridge Futures of Intelligence, Berggruen Institute, 2023</div></div>
+<div class="out-group"><div class="out-title"><a href="https://varia.zone/en/colonial-infrastructures-23.html" target="_blank" rel="noopener">Colonial Infrastructures: presentation and workshop</a></div><div class="out-meta">Varia collective, Rotterdam, 2023</div></div>
+<div class="out-group"><div class="out-title">Europaeum Network: Society: Beyond the Digital Revolution</div><div class="out-meta">Oxford University, 2023</div></div>
+<div class="out-group"><div class="out-title"><a href="https://www.disruptionlab.org/event/df32-algorithms-of-violence" target="_blank" rel="noopener">Disruption Network Lab: Algorithms of Violence</a></div><div class="out-meta">SMART PRISONS series. With Petra Molnar and Martina Tazzioli, Berlin, 2022</div></div>
+<div class="out-group"><div class="out-title">ARTIVISM: panel host and workshop leader</div><div class="out-meta">Disruption Network Lab, Berlin, 2022</div></div>
+<div class="out-group"><div class="out-title"><a href="https://humanities.uct.ac.za/huma/events/yasmine-boudiaf-anti-colonial-artistic-research" target="_blank" rel="noopener">Institute for Humanities in Africa: Anti-Colonial Artistic Research</a></div><div class="out-meta">HUMA Ataya Seminar, University of Cape Town, 2022</div></div>
+<div class="out-group"><div class="out-title"><a href="https://www.cpdpconferences.org/events/ai-justice-matrix-the-futility-of-policy-craft" target="_blank" rel="noopener">CPDP 2022: AI Justice Matrix: The Futility of Policy Craft</a></div><div class="out-meta">Keynote, Brussels, 2022</div></div>
+<div class="out-group"><div class="out-title">CPDP 2021: Connecting The Dots: Privacy, Data, Racial Justice</div><div class="out-meta">Panelist. With Sarah Chander, Nakeema Stefflbauer, Nani Jansen Reventlow, Seeta Peña Gangadharan, 2021</div></div>
+<div class="out-group"><div class="out-title">Network Disruption Lab: Data, Surveillance and Borders</div><div class="out-meta">Panelist, 2021</div></div>
+<div class="out-group"><div class="out-title">AI UK: How to make an impact: Public participation</div><div class="out-meta">The Alan Turing Institute, 2021</div></div>
+<div class="out-group"><div class="out-title"><a href="https://www.youtube.com/watch?v=-dJbPW6ycbo" target="_blank" rel="noopener">Entanglements: UAL Technology and Power: Public Seminar</a></div><div class="out-meta">University of the Arts London, 2021</div></div>
+<div class="out-group"><div class="out-title">Civil Service Fast Stream Conference</div><div class="out-meta">Guest speaker: Diversity, Technology and Policy, 2021</div></div>
+<div class="out-group"><div class="out-title">المورد الثقافي / Mawred: AI and Artistic Labour in the Arab World</div><div class="out-meta">Panel organiser and host, 2021</div></div>
+
+<h2 class="section-head">Teaching</h2>
+<div class="out-group"><div class="out-title"><a href="https://www.coursera.org/learn/creative-ai-intro" target="_blank" rel="noopener">UAL Creative AI: Coursera Specialisation</a></div><div class="out-meta">Expert contributor. Introduction to Creative AI, Images and Media, Sound, Music and Interaction, Text and Transformations, 2024</div></div>
+<div class="out-group"><div class="out-title">MA Internet Equalities, BSc Creative Computing</div><div class="out-meta">University of the Arts London, module teaching, 2021–present</div></div>
+<div class="out-group"><div class="out-title">Chaos and Big Data: Controversies and Public Impact</div><div class="out-meta">Linnaeus University, Sweden, co-module leader, 2021–2022</div></div>
+
+<h2 class="section-head">Exhibitions</h2>
+<div class="out-group"><div class="out-title"><a href="https://www.radicalmatter.art/events/exhibition" target="_blank" rel="noopener">radical matter</a></div><div class="out-meta">AIL, University of Applied Arts Vienna, 2024</div></div>
+<div class="out-group"><div class="out-title"><a href="https://betterimagesofai.org/images?artist=YasmineBoudiaf&amp;title=DataProcessing" target="_blank" rel="noopener">Data Processing: Better Images of AI</a></div><div class="out-meta">Co-created with LOTI, CC-BY 4.0, 2023</div></div>
+<div class="out-group"><div class="out-title">Sentient Blobs</div><div class="out-meta">Interactive light sculptures, Secret Garden Party, 2022</div></div>
+<div class="out-group"><div class="out-title">Safety Meme</div><div class="out-meta">Robotic sculpture, CPDP, Brussels, 2021</div></div>
+<div class="out-group"><div class="out-title">Amphibian Populations of London</div><div class="out-meta">Computational sculpture, Goldsmiths, 2022</div></div>
+
+<h2 class="section-head">Media</h2>
+<div class="out-group"><div class="out-title"><a href="https://www.thegoodrobot.co.uk/post/art-technology-and-justice-with-yasmine-boudiaf" target="_blank" rel="noopener">The Good Robot: Art, Technology and Justice</a></div><div class="out-meta">Leverhulme CFI. Transcript available, 2024</div></div>
+<div class="out-group"><div class="out-title"><a href="https://rwm.macba.cat/en/sonia/sonia-379-yasmine-boudiaf" target="_blank" rel="noopener">Son[i]a #379: Radio Web MACBA</a></div><div class="out-meta">MACBA Barcelona, Re-Imagine Europe, 2023</div></div>
+<div class="out-group"><div class="out-title">All Tech Is Human: Responsible Tech Guide</div><div class="out-meta">The Business Case for AI Ethics, 2022</div></div>
+<div class="out-group"><div class="out-title">The Evening Standard</div><div class="out-meta">VR to tackle microaggressions in workplaces, 2021</div></div>
+</section>
+
+<section id="v-bio" class="view" data-title="Bio" hidden>
+<figure class="fig portrait"><img src="images/portrait.webp" alt="Portrait of Yasmine Boudiaf in front of patterned wallpaper with green leaves" width="800" height="800"></figure>
+<h2 class="section-head">Short bio</h2>
+<p>Yasmine Boudiaf is a researcher, artist, and technologist based in London. A Research Fellow at UAL's Creative Computing Institute and a PhD candidate working at the intersection of generative AI, intangible cultural heritage, and decolonial practice, she was named one of <a href="https://womeninaiethics.org/the-list/of-2022/" rel="noopener" target="_blank">100 Brilliant Women in AI Ethics 2022</a> and is a Visiting Fellow of the <a href="https://www.adalovelaceinstitute.org/person/yasmine-boudiaf/" rel="noopener" target="_blank">Ada Lovelace Institute</a> and a Fellow of the Royal Society of Arts.</p>
+<h2 class="section-head">Long bio</h2>
+<p>Yasmine Boudiaf is a researcher, artist, and technologist based in London. A Research Fellow at UAL's Creative Computing Institute and a PhD candidate working at the intersection of generative AI, intangible cultural heritage, and decolonial practice, she was named one of <a href="https://womeninaiethics.org/the-list/of-2022/" rel="noopener" target="_blank">100 Brilliant Women in AI Ethics 2022</a> and is a Visiting Fellow of the <a href="https://www.adalovelaceinstitute.org/person/yasmine-boudiaf/" rel="noopener" target="_blank">Ada Lovelace Institute</a> and a Fellow of the Royal Society of Arts.</p>
+<p>Her practice spans participatory workshops, diagramming methodologies, and community-grounded approaches to AI and cultural heritage, with a particular focus on North African heritage traditions and decolonial frameworks. Her art practice is described as 'tin foil hat research': playful projects rooted in deep research methodologies ranging from writing to computing, examining the shape-shifting tactics of ruling powers and new technologies.</p>
+<p>As a serial founder, Yasmine built and directed Justice Matrix (2020–2024), a non-profit consultancy supporting organisations in developing sustainable, socially responsible technology projects and policies. She previously served as Chief Strategist at Peoples Studio (2019–2022) and founded Serious Datum (2014–2019).</p>
+<p>She is an Associate Researcher at London South Bank University, AI Policy Advisor to <a href="https://paqn.network/" rel="noopener" target="_blank">PAQN</a>, and co-organiser of No Tech For Tyrants.</p>
+
+<h2 class="section-head">Contact</h2>
+<p>yasmine-boudiaf [@] protonmail.com</p>
+<p><a href="https://www.linkedin.com/in/yasmine-boudiaf-258349143/" rel="noopener" target="_blank">LinkedIn</a></p>
+</section>
+</main>
+
+<script>
+
+(function () {
+  
+
+  var views = document.querySelectorAll('.view');
+  var navLinks = document.querySelectorAll('.nav-links a');
+  function show(id, push) {
+    var target = document.getElementById('v-' + id) || document.getElementById('v-landing');
+    views.forEach(function (v) { v.hidden = v !== target; });
+    var key = target.id.slice(2);
+    var section = key.indexOf('project-') === 0 ? 'projects' : key;
+    navLinks.forEach(function (a) {
+      if (a.getAttribute('href') === '#' + section) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    });
+    var t = target.getAttribute('data-title');
+    document.title = t ? t + ', Yasmine Boudiaf' : 'Yasmine Boudiaf';
+    if (push) { try { history.pushState(null, '', '#' + key); } catch (e) {} }
+    window.scrollTo(0, 0);
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault();
+    show(a.getAttribute('href').slice(1) || 'landing', true);
+  });
+  window.addEventListener('popstate', function () { show((location.hash || '#landing').slice(1), false); });
+  var start = '';
+  try { start = location.hash.slice(1); } catch (e) {}
+  show(start || 'landing', false);
+
+  var slides = document.querySelectorAll('.slide');
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (still) document.querySelectorAll('video[autoplay]').forEach(function (v) { v.removeAttribute('autoplay'); v.setAttribute('controls', ''); v.pause(); });
+  if (slides.length > 1 && !still) {
+    var i = 0;
+    setInterval(function () {
+      if (document.getElementById('v-landing').hidden) return;
+      slides[i].classList.remove('is-on');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('is-on');
+    }, 4500);
+  }
+})();
+
+</script>
 </body>
 </html>
